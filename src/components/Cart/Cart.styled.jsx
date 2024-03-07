@@ -7,6 +7,7 @@ export const StyledCartContainer = styled.ul`
   border-radius: 10px;
   padding: 15px;
   overflow-y: scroll;
+  text-align: center;
 `;
 
 export const StyledLi = styled.li`

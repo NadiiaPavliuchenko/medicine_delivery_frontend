@@ -6,9 +6,11 @@ import {
   StyledName,
   StyledThumb,
   StyledDiv,
+  StyledHeart,
 } from "./Drugs.styled";
+import { SlHeart } from "react-icons/sl";
 
-const Drugs = ({ drugsList }) => {
+const Drugs = ({ drugsList, changeFavorite }) => {
   const [drugs, setDrugs] = useState(() => {
     const storedDrugs = JSON.parse(localStorage.getItem("medicineCart")) || [];
     return storedDrugs;
@@ -51,6 +53,12 @@ const Drugs = ({ drugsList }) => {
               >
                 Add to cart
               </StyledButton>
+              <StyledHeart
+                onClick={() => changeFavorite(drug)}
+                favorite={drug.favorite.toString()}
+              >
+                <SlHeart />
+              </StyledHeart>
             </StyledDiv>
           </StyledLi>
         ))}

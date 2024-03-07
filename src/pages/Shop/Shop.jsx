@@ -3,6 +3,7 @@ import Pharmacies from "../../components/Pharmacies/Pharmacies";
 import Drugs from "../../components/Drugs/Drugs";
 import getDrugsByPharmacy from "../../api/getDrugsByPharmacy";
 import getDrugs from "../../api/getDrugs";
+import updateFavorite from "../../api/updateFavorite.js";
 import { StyledContaiter } from "./Shop.styled";
 
 const Shop = () => {
@@ -40,13 +41,28 @@ const Shop = () => {
     getDrugs();
   }, [selectedPharmacy]);
 
+  const changeFavorite = async (drug) => {
+    try {
+      const updatedDrug = await updateFavorite(drug._id, !drug.favorite);
+      setDrugs((prevDrugs) => {
+        return prevDrugs.map((prevDrug) =>
+          prevDrug._id === updatedDrug._id
+            ? { ...prevDrug, favorite: updatedDrug.favorite }
+            : prevDrug
+        );
+      });
+    } catch (e) {
+      console.log("Error while marking drug as favorite", e);
+    }
+  };
+
   return (
     <StyledContaiter>
       <Pharmacies
         onSelect={handlePharmacySelect}
         selectedPahrmacy={selectedPharmacy}
       />
-      <Drugs drugsList={drugs} />
+      <Drugs drugsList={drugs} changeFavorite={changeFavorite} />
     </StyledContaiter>
   );
 };

@@ -50,3 +50,11 @@ export const StyledDiv = styled.div`
   justify-content: space-between;
   margin: 20px 5px;
 `;
+
+export const StyledHeart = styled.button`
+  background-color: transparent;
+  border: none;
+
+  ${(props) => props.favorite === "false" && `color: black;`}
+  ${(props) => props.favorite === "true" && `color: red;`}
+`;

@@ -11,7 +11,7 @@ import { IconContext } from "react-icons";
 const Cart = ({ cartItems, deleteFromCart, handleQuantityChange }) => {
   return (
     <StyledCartContainer>
-      {cartItems &&
+      {cartItems.length !== 0 ? (
         cartItems.map((item) => (
           <StyledLi key={item._id}>
             <div>
@@ -37,7 +37,10 @@ const Cart = ({ cartItems, deleteFromCart, handleQuantityChange }) => {
               </StyledButton>
             </div>
           </StyledLi>
-        ))}
+        ))
+      ) : (
+        <p>Cart is empty :(</p>
+      )}
     </StyledCartContainer>
   );
 };
