@@ -14,6 +14,10 @@ const Shop = () => {
     setSelectedPharmacy(pharmacyId);
   };
 
+  const handleAllSelect = () => {
+    setSelectedPharmacy(null);
+  };
+
   useEffect(() => {
     const getDrugsList = async () => {
       try {
@@ -24,8 +28,9 @@ const Shop = () => {
         console.log("Error while getting drugs list", e);
       }
     };
+    if (!selectedPharmacy) getDrugsList();
     getDrugsList();
-  }, []);
+  }, [selectedPharmacy]);
 
   useEffect(() => {
     const getDrugs = async () => {
@@ -60,6 +65,7 @@ const Shop = () => {
     <StyledContaiter>
       <Pharmacies
         onSelect={handlePharmacySelect}
+        onSelectAll={handleAllSelect}
         selectedPahrmacy={selectedPharmacy}
       />
       <Drugs drugsList={drugs} changeFavorite={changeFavorite} />

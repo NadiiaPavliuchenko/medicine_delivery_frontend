@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import getPharmacies from "../../api/getPharmacies";
 import { StyledContainer, StyledH, StyledLi } from "./Pharmacies.styled";
 
-const Pharmacies = ({ onSelect, selectedPahrmacy }) => {
+const Pharmacies = ({ onSelect, onSelectAll, selectedPahrmacy }) => {
   const [pharmacies, setPharmacies] = useState([]);
   useEffect(() => {
     const getPharmaciesList = async () => {
@@ -21,6 +21,13 @@ const Pharmacies = ({ onSelect, selectedPahrmacy }) => {
     <StyledContainer>
       <StyledH>Pharmacies:</StyledH>
       <ul>
+        <StyledLi
+          key={1}
+          onClick={() => onSelectAll()}
+          selected={selectedPahrmacy === null}
+        >
+          <p>All pharmacies</p>
+        </StyledLi>
         {pharmacies &&
           pharmacies.map((pharmacy) => (
             <StyledLi
