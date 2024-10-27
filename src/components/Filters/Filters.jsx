@@ -1,8 +1,4 @@
-import {
-  FlexContainer,
-  SelectContainer,
-  FiltersButton,
-} from "./Filters.styled";
+import { FlexContainer, FiltersButton } from "./Filters.styled";
 import Select from "@mui/material/Select";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
@@ -17,7 +13,7 @@ const Filters = ({
 }) => {
   return (
     <FlexContainer>
-      <SelectContainer>
+      <div>
         <FormControl sx={{ m: 1, width: 152 }} size="small">
           <InputLabel id="label-price">Price</InputLabel>
           <Select
@@ -48,7 +44,7 @@ const Filters = ({
             <MenuItem value="asc">oldest to newest</MenuItem>
           </Select>
         </FormControl>
-      </SelectContainer>
+      </div>
       <FiltersButton type="button" onClick={onDropFilters}>
         Drop Filters
       </FiltersButton>

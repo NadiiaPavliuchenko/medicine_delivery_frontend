@@ -1,38 +1,59 @@
 import styled from "styled-components";
 
 export const StyledList = styled.ul`
-  width: 80vw;
-  height: 80vh;
   border: 1px solid #333;
   border-radius: 10px;
-  display: flex;
-  flex-wrap: wrap;
   padding: 15px;
-  gap: 10px;
+  /* display: flex;
+  flex-wrap: wrap; */
   overflow-y: scroll;
+
+  display: grid;
+  gap: 10px;
+
+  @media screen and (min-width: 768px) {
+    width: 80vw;
+    height: 80vh;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media screen and (min-width: 1440px) {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(auto-fit, 330px);
+  }
 `;
 
 export const StyledLi = styled.li`
   border: 1px solid #333;
   border-radius: 5px;
-  width: calc((100% / 3) - 10px);
-  height: 300px;
+  padding: 12px;
+  display: block;
 `;
 
 export const StyledThumb = styled.div`
-  width: 200px;
+  width: 280px;
   height: 200px;
   border-radius: 5px;
   overflow: hidden;
   margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media screen and (min-width: 768px) {
+    width: 200px;
+    height: 200px;
+  }
 `;
 
-export const StyledName = styled.p`
+export const StyledName = styled.h3`
   font-weight: 600;
-  margin: 5px;
+  margin: 10px 0;
 `;
 
 export const StyledButton = styled.button`
+  display: block;
+  cursor: pointer;
   padding: 5px;
   border-radius: 5px;
   border: 1px solid #333;
@@ -48,7 +69,8 @@ export const StyledButton = styled.button`
 export const StyledDiv = styled.div`
   display: flex;
   justify-content: space-between;
-  margin: 20px 5px;
+  align-items: center;
+  margin: 20px 0;
 `;
 
 export const StyledHeart = styled.button`
