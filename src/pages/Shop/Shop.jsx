@@ -1,14 +1,17 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import Pharmacies from "../../components/Pharmacies/Pharmacies";
 import Drugs from "../../components/Drugs/Drugs";
 import getDrugsByPharmacy from "../../api/getDrugsByPharmacy";
 import getDrugs from "../../api/getDrugs";
 import updateFavorite from "../../api/updateFavorite.js";
 import { StyledContaiter } from "./Shop.styled";
+import Filters from "../../components/Filters/Filters.jsx";
 
 const Shop = () => {
   const [selectedPharmacy, setSelectedPharmacy] = useState(null);
   const [drugs, setDrugs] = useState([]);
+  const [date, setDate] = useState("");
+  const [price, setPrice] = useState("");
 
   const handlePharmacySelect = (pharmacyId) => {
     setSelectedPharmacy(pharmacyId);
@@ -18,33 +21,35 @@ const Shop = () => {
     setSelectedPharmacy(null);
   };
 
-  useEffect(() => {
-    const getDrugsList = async () => {
-      try {
-        const drugsList = await getDrugs();
-
-        setDrugs(drugsList);
-      } catch (e) {
-        console.log("Error while getting drugs list", e);
-      }
-    };
-    if (!selectedPharmacy) getDrugsList();
-    getDrugsList();
-  }, [selectedPharmacy]);
+  const getDrugList = useCallback(async () => {
+    try {
+      const drugsList = await getDrugs(date, price);
+      setDrugs(drugsList);
+    } catch (e) {
+      console.log("Error while getting drugs list", e);
+    }
+  }, [date, price]);
 
   useEffect(() => {
     const getDrugs = async () => {
       try {
-        const drugsList = await getDrugsByPharmacy(selectedPharmacy);
+        const drugsList = await getDrugsByPharmacy(
+          selectedPharmacy,
+          date,
+          price
+        );
 
         setDrugs(drugsList);
       } catch (e) {
         console.log("Error while getting drugs list", e);
       }
     };
-    if (!selectedPharmacy) return;
-    getDrugs();
-  }, [selectedPharmacy]);
+    if (selectedPharmacy) {
+      getDrugs();
+    } else {
+      getDrugList(date, price);
+    }
+  }, [getDrugList, selectedPharmacy, date, price]);
 
   const changeFavorite = async (drug) => {
     try {
@@ -61,15 +66,37 @@ const Shop = () => {
     }
   };
 
+  const handlePriceChange = (e) => {
+    setPrice(e.target.value);
+  };
+
+  const handleDateChange = (e) => {
+    setDate(e.target.value);
+  };
+
+  const handleDropFilters = () => {
+    setDate("");
+    setPrice("");
+  };
+
   return (
-    <StyledContaiter>
-      <Pharmacies
-        onSelect={handlePharmacySelect}
-        onSelectAll={handleAllSelect}
-        selectedPahrmacy={selectedPharmacy}
+    <>
+      <Filters
+        price={price}
+        date={date}
+        onPriceChange={handlePriceChange}
+        onDateChange={handleDateChange}
+        onDropFilters={handleDropFilters}
       />
-      <Drugs drugsList={drugs} changeFavorite={changeFavorite} />
-    </StyledContaiter>
+      <StyledContaiter>
+        <Pharmacies
+          onSelect={handlePharmacySelect}
+          onSelectAll={handleAllSelect}
+          selectedPahrmacy={selectedPharmacy}
+        />
+        <Drugs drugsList={drugs} changeFavorite={changeFavorite} />
+      </StyledContaiter>
+    </>
   );
 };
 

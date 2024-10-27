@@ -9,6 +9,9 @@ export const StyledHeader = styled.header`
   height: 60px;
   padding: 0 20px;
   margin-bottom: 5px;
+  @media screen and (max-width: 767px) {
+    justify-content: center;
+  }
 `;
 
 export const Navbar = styled.nav`
@@ -22,11 +25,14 @@ export const Li = styled.li`
   &::after {
     content: "";
     position: absolute;
-    left: 92px;
+    left: 120px;
     top: 16px;
     width: 1px;
     height: 30px;
     background-color: #333;
+    @media screen and (min-width: 768px) {
+      left: 92px;
+    }
   }
 `;
 

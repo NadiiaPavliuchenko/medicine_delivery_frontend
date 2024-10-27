@@ -15,7 +15,7 @@ const Pharmacies = ({ onSelect, onSelectAll, selectedPahrmacy }) => {
       }
     };
     getPharmaciesList();
-  });
+  }, []);
 
   return (
     <StyledContainer>
