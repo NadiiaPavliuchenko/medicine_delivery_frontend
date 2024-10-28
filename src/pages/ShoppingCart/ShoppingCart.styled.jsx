@@ -2,5 +2,11 @@ import styled from "styled-components";
 
 export const StyledContaiter = styled.div`
   display: flex;
-  gap: 10px;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 20px;
+
+  @media screen and (min-width: 768px) {
+    flex-wrap: nowrap;
+  }
 `;

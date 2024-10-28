@@ -4,6 +4,9 @@ import {
   StyledH,
   StyledP,
   StyledButton,
+  StyledBlock,
+  StyledInput,
+  StyledInfo,
 } from "./Cart.styled";
 import { AiOutlineClose } from "react-icons/ai";
 import { IconContext } from "react-icons";
@@ -20,13 +23,17 @@ const Cart = ({ cartItems, deleteFromCart, handleQuantityChange }) => {
             <div>
               <StyledH>{item.name}</StyledH>
               <StyledP>Price: {item.price} &#8372;</StyledP>
-              <label htmlFor="quantity">Quantity: </label>
-              <input
-                type="number"
-                name="quantity"
-                defaultValue={item.quantity}
-                onChange={(e) => handleQuantityChange(e.target.value, item._id)}
-              />
+              <StyledBlock>
+                <label htmlFor="quantity">Quantity: </label>
+                <StyledInput
+                  type="number"
+                  name="quantity"
+                  defaultValue={item.quantity}
+                  onChange={(e) =>
+                    handleQuantityChange(e.target.value, item._id)
+                  }
+                />
+              </StyledBlock>
               <StyledButton
                 type="button"
                 onClick={() => deleteFromCart(item._id)}
@@ -39,7 +46,7 @@ const Cart = ({ cartItems, deleteFromCart, handleQuantityChange }) => {
           </StyledLi>
         ))
       ) : (
-        <p>Cart is empty :(</p>
+        <StyledInfo>Cart is empty :(</StyledInfo>
       )}
     </StyledCartContainer>
   );

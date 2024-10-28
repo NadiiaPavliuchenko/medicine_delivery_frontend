@@ -1,15 +1,16 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
-import { StyledHeader, Navbar, Li, StyledNavLink } from "./Header.styled";
+import { StyledHeader, Navbar, Line, StyledNavLink } from "./Header.styled";
 
 const Header = () => {
   return (
     <>
       <StyledHeader>
         <Navbar>
-          <Li>
+          <li>
             <StyledNavLink to="/">Shop</StyledNavLink>
-          </Li>
+          </li>
+          <Line />
           <li>
             <StyledNavLink to="/cart">Shophing Cart</StyledNavLink>
           </li>

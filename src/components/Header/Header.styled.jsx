@@ -21,19 +21,11 @@ export const Navbar = styled.nav`
   margin: 0;
 `;
 
-export const Li = styled.li`
-  &::after {
-    content: "";
-    position: absolute;
-    left: 120px;
-    top: 16px;
-    width: 1px;
-    height: 30px;
-    background-color: #333;
-    @media screen and (min-width: 768px) {
-      left: 92px;
-    }
-  }
+export const Line = styled.span`
+  display: block;
+  width: 1px;
+  height: 30px;
+  background-color: #333;
 `;
 
 export const StyledNavLink = styled(NavLink)`

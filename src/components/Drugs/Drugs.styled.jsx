@@ -4,8 +4,6 @@ export const StyledList = styled.ul`
   border: 1px solid #333;
   border-radius: 10px;
   padding: 15px;
-  /* display: flex;
-  flex-wrap: wrap; */
   overflow-y: scroll;
 
   display: grid;

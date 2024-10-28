@@ -1,4 +1,5 @@
 import {
+  FormStyled,
   StyledButton,
   StyledButtonContainer,
   StyledInput,
@@ -8,7 +9,7 @@ import {
 
 const DeliveryForm = ({ onSubmit, calculateTotalPrice }) => {
   return (
-    <form onSubmit={(e) => onSubmit(e)}>
+    <FormStyled onSubmit={(e) => onSubmit(e)}>
       <StyledInputsContainer>
         <StyledLabel htmlFor="name">Name:</StyledLabel>
         <StyledInput type="text" name="name" id="name" />
@@ -23,7 +24,7 @@ const DeliveryForm = ({ onSubmit, calculateTotalPrice }) => {
         <h3>TotalPrice: {calculateTotalPrice()} &#8372;</h3>
         <StyledButton type="submit">Submit</StyledButton>
       </StyledButtonContainer>
-    </form>
+    </FormStyled>
   );
 };
 
