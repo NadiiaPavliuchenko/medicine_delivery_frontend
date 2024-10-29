@@ -22,6 +22,13 @@ export const StyledInputsContainer = styled.div`
   }
 `;
 
+export const FieldContainer = styled.div`
+  position: relative;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+`;
+
 export const StyledLabel = styled.label`
   margin: 20px 0 10px 0;
   @media screen and (min-width: 768px) and (max-width: 1439px) {
@@ -30,7 +37,6 @@ export const StyledLabel = styled.label`
 `;
 
 export const StyledInput = styled.input`
-  width: 90%;
   border-radius: 5px;
   border: 1px solid #333;
   padding: 10px;
@@ -68,5 +74,17 @@ export const StyledButton = styled.button`
   &:focus {
     background-color: lightgrey;
     transition: background-color 0.5s ease-out;
+  }
+`;
+
+export const Feedback = styled.div`
+  color: red;
+  position: absolute;
+  top: 100px;
+  left: 0;
+  font-size: small;
+
+  @media screen and (min-width: 768px) and (max-width: 1439px) {
+    top: 78px;
   }
 `;
