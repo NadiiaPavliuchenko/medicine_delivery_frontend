@@ -52,31 +52,30 @@ const ShoppingCart = () => {
     });
 
     const newOrder = {
-      name: name.value,
-      email: email.value,
-      phone: phone.value,
-      address: address.value,
+      name: name,
+      email: email,
+      phone: phone,
+      address: address,
       price: totalPrice,
       products,
     };
+
     return newOrder;
   };
 
   const sendOrderToServer = async (newOrder) => {
     try {
-      const createdOrder = await createOrder(newOrder);
-      console.log(createdOrder);
+      await createOrder(newOrder);
       setCartItems([]);
     } catch (e) {
       console.log("Error while creating an order", e);
     }
   };
 
-  const handleAddOrder = async (e) => {
-    e.preventDefault();
-    const newOrder = createOrderObject(e.target.elements);
+  const handleAddOrder = async (values, { resetForm }) => {
+    const newOrder = createOrderObject(values);
     await sendOrderToServer(newOrder);
-    e.target.reset();
+    resetForm();
   };
 
   return (
