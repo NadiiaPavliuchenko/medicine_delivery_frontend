@@ -1,16 +1,24 @@
 import styled from "styled-components";
 
 export const StyledContainer = styled.div`
-  @media screen and (min-width: 768px) {
-    width: 20vw;
-    height: 100%;
-  }
+  height: 100%;
   display: flex;
   flex-direction: column;
   border: 1px solid #333;
   border-radius: 10px;
   padding: 20px;
   align-items: center;
+
+  @media screen and (min-width: 768px) {
+    width: 20vw;
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1439px) {
+    height: 80vh;
+    padding: 15px;
+
+    justify-content: center;
+  }
 `;
 
 export const StyledH = styled.h3`

@@ -4,10 +4,34 @@ export const StyledList = styled.ul`
   border: 1px solid #333;
   border-radius: 10px;
   padding: 15px;
-  overflow-y: scroll;
+  overflow-y: auto;
 
   display: grid;
   gap: 10px;
+
+  &::-webkit-scrollbar {
+    width: 14px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+    border-radius: 100px;
+
+    &:hover {
+      background-color: rgba(#fff, 0.3);
+    }
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: lightgray;
+    background-clip: content-box;
+    border: 5px solid transparent;
+    border-radius: 100px;
+
+    &:hover {
+      background-color: #5f5d5d;
+    }
+  }
 
   @media screen and (min-width: 768px) {
     width: 80vw;
