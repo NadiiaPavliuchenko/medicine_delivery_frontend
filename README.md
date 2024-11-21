@@ -1,6 +1,12 @@
 # medicine_delivery_frontend
 
-Цей репозиторій містить додаток, який є інтернет-магазином лків з можливістю оформлення замовлення.
+Цей репозиторій містить додаток, який є інтернет-магазином ліків з можливістю оформлення замовлення.
+
+Репозиторій з API проєкту можна переглянути за [посиланням](https://github.com/NadiiaPavliuchenko/medicine_delivery_backend)
+
+API проєкту задеплоєно на [Render.com](https://render.com/)
+
+Swagger документація до API проєкту доступна за [посиланням](https://medicine-delivery-backend-t1jj.onrender.com/api-docs/)
 
 ## Як запустити додаток
 
