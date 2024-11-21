@@ -1,20 +1,20 @@
 {
   "files": {
     "main.css": "/medicine_delivery_frontend/static/css/main.b517186e.css",
-    "main.js": "/medicine_delivery_frontend/static/js/main.db21652b.js",
+    "main.js": "/medicine_delivery_frontend/static/js/main.fe62492a.js",
     "static/js/262.55ab1cc6.chunk.js": "/medicine_delivery_frontend/static/js/262.55ab1cc6.chunk.js",
-    "static/js/786.16d5d827.chunk.js": "/medicine_delivery_frontend/static/js/786.16d5d827.chunk.js",
-    "static/js/875.6778069b.chunk.js": "/medicine_delivery_frontend/static/js/875.6778069b.chunk.js",
+    "static/js/786.32991b0d.chunk.js": "/medicine_delivery_frontend/static/js/786.32991b0d.chunk.js",
+    "static/js/875.7f620661.chunk.js": "/medicine_delivery_frontend/static/js/875.7f620661.chunk.js",
     "static/js/197.9dfc5d9b.chunk.js": "/medicine_delivery_frontend/static/js/197.9dfc5d9b.chunk.js",
     "static/js/522.43652c74.chunk.js": "/medicine_delivery_frontend/static/js/522.43652c74.chunk.js",
     "static/js/669.99077b12.chunk.js": "/medicine_delivery_frontend/static/js/669.99077b12.chunk.js",
     "static/js/856.73b40ed4.chunk.js": "/medicine_delivery_frontend/static/js/856.73b40ed4.chunk.js",
     "index.html": "/medicine_delivery_frontend/index.html",
     "main.b517186e.css.map": "/medicine_delivery_frontend/static/css/main.b517186e.css.map",
-    "main.db21652b.js.map": "/medicine_delivery_frontend/static/js/main.db21652b.js.map",
+    "main.fe62492a.js.map": "/medicine_delivery_frontend/static/js/main.fe62492a.js.map",
     "262.55ab1cc6.chunk.js.map": "/medicine_delivery_frontend/static/js/262.55ab1cc6.chunk.js.map",
-    "786.16d5d827.chunk.js.map": "/medicine_delivery_frontend/static/js/786.16d5d827.chunk.js.map",
-    "875.6778069b.chunk.js.map": "/medicine_delivery_frontend/static/js/875.6778069b.chunk.js.map",
+    "786.32991b0d.chunk.js.map": "/medicine_delivery_frontend/static/js/786.32991b0d.chunk.js.map",
+    "875.7f620661.chunk.js.map": "/medicine_delivery_frontend/static/js/875.7f620661.chunk.js.map",
     "197.9dfc5d9b.chunk.js.map": "/medicine_delivery_frontend/static/js/197.9dfc5d9b.chunk.js.map",
     "522.43652c74.chunk.js.map": "/medicine_delivery_frontend/static/js/522.43652c74.chunk.js.map",
     "669.99077b12.chunk.js.map": "/medicine_delivery_frontend/static/js/669.99077b12.chunk.js.map",
@@ -22,6 +22,6 @@
   },
   "entrypoints": [
     "static/css/main.b517186e.css",
-    "static/js/main.db21652b.js"
+    "static/js/main.fe62492a.js"
   ]
 }
